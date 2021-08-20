@@ -44,7 +44,7 @@ class AlgoritmoResolverLaberinto
     {
 
         int[][] laberinto = LaberintoReader.leerLaberinto(getClass().getClassLoader()
-                                                                    .getResource("laberintos/maze-horizontal.png")
+                                                                    .getResource("laberintos/maze-sin-paredes.png")
                                                                     .getFile());
 
         it.imprimirMatriz(laberinto);
