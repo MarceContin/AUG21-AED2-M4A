@@ -43,7 +43,9 @@ class AlgoritmoResolverLaberinto
         Exception
     {
 
-        int[][] laberinto = LaberintoReader.leerLaberinto("/Users/marcosperez/Downloads/maze.png");
+        int[][] laberinto = LaberintoReader.leerLaberinto(getClass().getClassLoader()
+                                                                    .getResource("laberintos/maze-horizontal.png")
+                                                                    .getFile());
 
         it.imprimirMatriz(laberinto);
         it.dibujarMatrizBinaria("laberinto", laberinto, Color.BLACK, Color.WHITE);

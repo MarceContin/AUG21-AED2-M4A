@@ -3,6 +3,7 @@ package uy.edu.ort.ad2.algoritmos.laberinto;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 
 import javax.imageio.ImageIO;
 

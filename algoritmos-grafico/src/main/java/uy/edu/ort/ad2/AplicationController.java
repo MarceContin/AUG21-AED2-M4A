@@ -1,5 +1,6 @@
 package uy.edu.ort.ad2;
 
+import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.SingleSelectionModel;
@@ -14,10 +15,11 @@ import uy.edu.ort.ad2.algoritmos.TodosLosAlgoritmos;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public
-class AplicationController
+class AplicationController<executor>
     implements Initializable
 {
     @FXML
@@ -30,6 +32,7 @@ class AplicationController
     private
     ComboBox<AlgoritmoACorrer> algoritmoSeleccionado;
 
+    private ExecutorService executor = Executors.newSingleThreadExecutor();
     @Override
     public
     void initialize(final URL location,
@@ -63,6 +66,7 @@ class AplicationController
                                          .orElseGet(null);
             }
         });
+
     }
 
     @FXML
@@ -91,14 +95,7 @@ class AplicationController
                 return null;
             }
         };
-        try
-        {
-            Executors.newSingleThreadExecutor()
-                     .submit(t);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+        Executor.getExecutor()
+                .submit(t);
     }
 }
