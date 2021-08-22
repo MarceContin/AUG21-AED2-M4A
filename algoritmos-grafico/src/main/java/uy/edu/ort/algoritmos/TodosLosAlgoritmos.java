@@ -1,6 +1,11 @@
-package uy.edu.ort.ad2.algoritmos;
+package uy.edu.ort.algoritmos;
 
-import uy.edu.ort.ad2.algoritmos.laberinto.AlgoritmoResolverLaberinto;
+import uy.edu.ort.algoritmos.laberinto.AlgoritmoResolverLaberinto;
+import uy.edu.ort.algoritmos.sorting.AlgoritmoBubbleSort;
+import uy.edu.ort.algoritmos.sorting.AlgoritmoInsertSort;
+import uy.edu.ort.algoritmos.sorting.AlgoritmoMergeSort;
+import uy.edu.ort.algoritmos.sorting.AlgoritmoQuickSort;
+import uy.edu.ort.algoritmos.sorting.AlgoritmoSelectionSort;
 
 import java.util.List;
 

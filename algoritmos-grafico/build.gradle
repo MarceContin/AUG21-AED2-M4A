@@ -4,7 +4,7 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
-group 'uy.edu.ort.ad2'
+group 'uy.edu.ort.ad'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -23,8 +23,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'uy.edu.ort.ad2'
-    mainClass = 'uy.edu.ort.ad2.ApplicationGrafica'
+    mainModule = 'uy.edu.ort.ad'
+    mainClass = 'uy.edu.ort.ad.ApplicationGrafica'
 }
 
 javafx {

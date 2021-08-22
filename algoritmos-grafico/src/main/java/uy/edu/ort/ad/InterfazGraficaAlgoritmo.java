@@ -1,4 +1,4 @@
-package uy.edu.ort.ad2;
+package uy.edu.ort.ad;
 
 import java.util.Collection;
 import java.util.function.BiConsumer;

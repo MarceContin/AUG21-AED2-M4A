@@ -1,4 +1,4 @@
-package uy.edu.ort.ad2;
+package uy.edu.ort.ad;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

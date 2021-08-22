@@ -1,4 +1,4 @@
-package uy.edu.ort.ad2.algoritmos.laberinto;
+package uy.edu.ort.algoritmos.laberinto;
 
 public
 class CeldaMatriz<T>

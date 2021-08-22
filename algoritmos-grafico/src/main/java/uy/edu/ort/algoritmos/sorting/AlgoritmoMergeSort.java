@@ -1,7 +1,8 @@
-package uy.edu.ort.ad2.algoritmos;
+package uy.edu.ort.algoritmos.sorting;
 
-import uy.edu.ort.ad2.InterfazGraficaAlgoritmo;
+import uy.edu.ort.ad.InterfazGraficaAlgoritmo;
 import javafx.scene.paint.Color;
+import uy.edu.ort.algoritmos.AlgoritmoACorrer;
 
 public
 class AlgoritmoMergeSort

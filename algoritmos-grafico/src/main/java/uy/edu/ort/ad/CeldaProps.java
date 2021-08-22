@@ -1,4 +1,4 @@
-package uy.edu.ort.ad2;
+package uy.edu.ort.ad;
 
 public
 class CeldaProps

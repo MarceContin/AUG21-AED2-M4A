@@ -1,10 +1,9 @@
-package uy.edu.ort.ad2.algoritmos.laberinto;
+package uy.edu.ort.algoritmos.laberinto;
 
 import java.util.Stack;
 
-import uy.edu.ort.ad2.InterfazGraficaAlgoritmo;
-import uy.edu.ort.ad2.algoritmos.AlgoritmoACorrer;
-import uy.edu.ort.ad2.algoritmos.laberinto.LaberintoReader;
+import uy.edu.ort.ad.InterfazGraficaAlgoritmo;
+import uy.edu.ort.algoritmos.AlgoritmoACorrer;
 import javafx.scene.paint.Color;
 
 public
@@ -43,9 +42,11 @@ class AlgoritmoResolverLaberinto
         Exception
     {
 
-        int[][] laberinto = LaberintoReader.leerLaberinto(getClass().getClassLoader()
-                                                                    .getResource("laberintos/maze-sin-paredes.png")
-                                                                    .getFile());
+        int[][] laberinto = LaberintoReader.leerLaberinto(
+            getClass()
+                .getResourceAsStream("/laberintos/maze.png"));
+        // LabPath.class
+        //         .getResourceAsStream("maze-sin-paredes.png")                                                              );
 
         it.imprimirMatriz(laberinto);
         it.dibujarMatrizBinaria("laberinto", laberinto, Color.BLACK, Color.WHITE);

@@ -1,30 +1,20 @@
-package uy.edu.ort.ad2.algoritmos;
+package uy.edu.ort.algoritmos.sorting;
 
-import uy.edu.ort.ad2.InterfazGraficaAlgoritmo;
+import uy.edu.ort.ad.InterfazGraficaAlgoritmo;
 import javafx.scene.paint.Color;
+import uy.edu.ort.algoritmos.AlgoritmoACorrer;
 
 public
-class AlgoritmoBubbleSort
+class AlgoritmoInsertSort
     implements AlgoritmoACorrer
 {
-
     private InterfazGraficaAlgoritmo it;
 
     @Override
     public
     String nombre()
     {
-        return "Bublle sort";
-    }
-
-    private
-    void swap(int[] datos,
-              int a,
-              int b)
-    {
-        int aux = datos[a];
-        datos[a] = datos[b];
-        datos[b] = aux;
+        return "Insert sort";
     }
 
     @Override
@@ -35,32 +25,30 @@ class AlgoritmoBubbleSort
     {
         int[] datosIniciales = new int[]{2000, 23, 21, 42, 14, 52, 25, 522, 14353, 322, 1233};
         this.it = it;
-        it.dibujarArray("mergesort", datosIniciales);
-
-        bubbleSort(it, datosIniciales);
-        it.sleep(500);
-        it.dibujarArray("mergesort", datosIniciales);
+        it.dibujarArray("selectionSort", datosIniciales);
+        it.sleep(1000);
+        insertionSort(datosIniciales);
+        it.dibujarArray("selectionSort", datosIniciales);
     }
 
-    private
-    void bubbleSort(final InterfazGraficaAlgoritmo it,
-                    final int[] datos)
+    public
+    void insertionSort(int[] datos)
     {
         for (int i = 0; i < datos.length; i++)
         {
-            for (int j = 0; j < datos.length - i - 1; j++)
-            {
-                dibujarMascara(it, datos, j, Color.YELLOW);
-                if (datos[j] > datos[j + 1])
-                {
-                    dibujarMascara(it, datos, j, Color.RED);
-                    it.sleep(500);
-                    swap(datos, j, j + 1);
-                    dibujarMascara(it, datos, j, Color.GREEN);
-                }
-            }
+            int j = i - 1;
+            int valorAInsertar = datos[i];
 
-            it.sleep(1000);
+            dibujarMascara(it, datos, j, Color.YELLOW);
+
+            //Hacemos lugar para que inserte
+            while (j >= 0 && datos[j] > valorAInsertar)
+            {
+                datos[j + 1] = datos[j];
+                j--;
+                dibujarMascara(it, datos, j, Color.YELLOW);
+            }
+            datos[j + 1] = valorAInsertar;//si no pasa nada se inserta en la posicion en la que estaba
         }
     }
 
@@ -70,6 +58,10 @@ class AlgoritmoBubbleSort
                         final int j,
                         final Color color)
     {
+        if (j < 0)
+        {
+            return;
+        }
         it.dibujarArray("selectionSort", datos);
         it.dibujarCeldaArray("selectionSort", datos, j, color);
         it.dibujarCeldaArray("selectionSort", datos, j + 1, color);

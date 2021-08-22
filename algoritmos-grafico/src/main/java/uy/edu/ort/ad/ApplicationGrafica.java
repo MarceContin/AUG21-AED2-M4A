@@ -1,4 +1,4 @@
-package uy.edu.ort.ad2;
+package uy.edu.ort.ad;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public
 class ApplicationGrafica

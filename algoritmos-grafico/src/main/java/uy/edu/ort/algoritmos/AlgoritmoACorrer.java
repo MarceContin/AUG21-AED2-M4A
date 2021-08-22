@@ -1,6 +1,6 @@
-package uy.edu.ort.ad2.algoritmos;
+package uy.edu.ort.algoritmos;
 
-import uy.edu.ort.ad2.InterfazGraficaAlgoritmo;
+import uy.edu.ort.ad.InterfazGraficaAlgoritmo;
 
 public
 interface AlgoritmoACorrer

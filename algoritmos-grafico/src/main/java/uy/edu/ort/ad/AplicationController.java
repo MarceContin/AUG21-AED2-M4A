@@ -1,17 +1,14 @@
-package uy.edu.ort.ad2;
+package uy.edu.ort.ad;
 
-import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.SingleSelectionModel;
 import javafx.util.StringConverter;
-import uy.edu.ort.ad2.algoritmos.AlgoritmoACorrer;
-import uy.edu.ort.ad2.algoritmos.AlgoritmoInsertSort;
+import uy.edu.ort.algoritmos.AlgoritmoACorrer;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
-import uy.edu.ort.ad2.algoritmos.TodosLosAlgoritmos;
+import uy.edu.ort.algoritmos.TodosLosAlgoritmos;
 
 import java.net.URL;
 import java.util.ResourceBundle;

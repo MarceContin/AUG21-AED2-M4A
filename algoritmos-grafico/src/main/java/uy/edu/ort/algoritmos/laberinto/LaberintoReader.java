@@ -1,9 +1,9 @@
-package uy.edu.ort.ad2.algoritmos.laberinto;
+package uy.edu.ort.algoritmos.laberinto;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
+import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
@@ -12,12 +12,12 @@ class LaberintoReader
 {
 
 	public static
-	int[][] leerLaberinto(String path)
+	int[][] leerLaberinto(InputStream is)
 		throws
 		IOException
 	{
 
-		BufferedImage image = ImageIO.read(new File(path));
+		BufferedImage image = ImageIO.read(is);
 
 		int tamanioCelda = 1;
 		int filas = image.getHeight() / tamanioCelda;
