@@ -75,7 +75,7 @@ class ArbolAdivinador
     	AGraphViz.imprimirArbol(raiz, v->String.format("%s/%s", 
     			v.respuesta!=null?v.respuesta:"",
     		    v.pregunta!=null?v.pregunta.pregunta:"")
-    			 , v->Stream.of(v.izq,v.der).toList(), 20);
+    			 , v->Stream.of(v.izq,v.der).collect(Collectors.toList()), 20);
     }
 
 
