@@ -6,12 +6,12 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public
-class Adivinador
+class AdivinadorMain
 {
 
     public static void main(String[] args){
 
-        Adivinador adivinador=new Adivinador();
+        AdivinadorMain adivinador=new AdivinadorMain();
         adivinador.adivinar("/respuestas.csv");
 
     }
@@ -19,7 +19,7 @@ class Adivinador
         LectorRespuestas lec=new LectorRespuestas();
        Respuestas respuestas= lec.leerArchivo(getClass().getResourceAsStream(archivo));
 
-        ArbolAdivinador2 adivinador=new ArbolAdivinador2();
+        ArbolAdivinador adivinador=new ArbolAdivinador();
         adivinador.construirArbol(respuestas);
         Scanner scanner=new Scanner(System.in);
         while (true){

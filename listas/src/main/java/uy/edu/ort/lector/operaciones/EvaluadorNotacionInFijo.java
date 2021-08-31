@@ -15,7 +15,21 @@ class EvaluadorNotacionInFijo
      * @param expresion la expresion en notacion de siempre
      * @return la evaluacion de la expresión
      */
-
+	//3*5+2 = 15+2 esto es precendecia. En este caso va a hacer 5*7
+	//2*(3+5-6)=
+	// 2 3 5 6
+	// * ( + -
+	//pop,pop=> 5 -6 => push(-1)
+	// 2 3 -1
+	// * ( +
+	// pop op => 3 + (-1) => push (2)
+	// 2 2
+	// * (
+	// pop veo que es parentesis
+	// 2 2
+	// *
+	// pop,pop => 2 * 2 =>push
+	// 4
     public float evaluarSinPrecedencia(String expresion){
         if(expresion==null||expresion.isBlank())return 0;
         //NEcesitamos dos pilas, una de operadores y otra de resultados
