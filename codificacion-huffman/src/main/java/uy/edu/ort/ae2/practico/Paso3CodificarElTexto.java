@@ -15,6 +15,7 @@ class Paso3CodificarElTexto
 
         for (int i = 0; i < texto.length(); i++)
         {
+            //Codificar el texto es codificar cada caracter a binario.
             textoCodificado.append(arbol.codificarCaracter(texto.charAt(i)));
         }
 

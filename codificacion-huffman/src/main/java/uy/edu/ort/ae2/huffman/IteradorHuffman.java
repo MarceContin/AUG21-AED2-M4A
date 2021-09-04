@@ -18,14 +18,9 @@ class IteradorHuffman
     public
     void siguiente(char bit)
     {
-        if ('1' == bit)
-        {
-            actual = actual.getDer();
-        }
-        else
-        {
-            actual = actual.getIzq();
-        }
+        //Esto es similar a lo que hicimos en clase. hay que actualizar el nodo actual al nodo que corresponde dependiendo del
+        //bit que leimos
+        throw new UnsupportedOperationException("Implementar siguiente iterador huffman");
     }
 
     public

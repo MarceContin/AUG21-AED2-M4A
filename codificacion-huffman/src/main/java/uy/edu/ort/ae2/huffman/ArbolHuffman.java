@@ -18,6 +18,12 @@ class ArbolHuffman
     }
 
     public
+    NodoHuffman getRaiz()
+    {
+        return raiz;
+    }
+
+    public
     String codificarCaracter(final char caracter)
     {
         return raiz.codificarCaracter(caracter, "");
@@ -27,5 +33,19 @@ class ArbolHuffman
     IteradorHuffman iterador()
     {
         return new IteradorHuffman(raiz);
+    }
+
+    public
+    int altura()
+    {
+        //Implementar la altura como hicimos en clase
+        return 0;
+    }
+
+    public
+    int cantidadDeHojas()
+    {
+        //Como vimos en clase
+        return 0;
     }
 }

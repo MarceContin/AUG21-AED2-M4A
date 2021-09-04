@@ -40,7 +40,8 @@ class NodoHuffman
     public
     boolean esHoja()
     {
-        return this.izq == null && this.der == null;
+        //Igual a como hicimos en clase
+        throw new UnsupportedOperationException("Implementar es hoja del nodohuffman");
     }
 
     public
@@ -53,15 +54,11 @@ class NodoHuffman
         }
 
         int cantidad = 0;
-        if (this.izq != null)
-        {
-            cantidad += this.izq.getFrecuencia();
-        }
-        if (this.der != null)
-        {
-            cantidad += this.der.getFrecuencia();
-        }
-        return cantidad;
+        //SI NO ES UNA HOJA LA FRECUENCIA ES LA SUMA DE LAS FRECUENCIAS DE LOS HIJOS
+        //Este metodo es similar al cantidad de nodos.
+        throw new UnsupportedOperationException("Implementar getFrecuencia NodoHuffman");
+
+        //   return cantidad;
     }
 
     public static
@@ -69,15 +66,18 @@ class NodoHuffman
                           NodoHuffman raiz2)
     {
         NodoHuffman nuevaRaiz = new NodoHuffman();
-        nuevaRaiz.izq = raiz1;
-        nuevaRaiz.der = raiz2;
-        return nuevaRaiz;
+        //Aqui hay que crear una nuevaRaiz que tenga de izquierda y derecha a los viejos nodos.
+        throw new UnsupportedOperationException("Implementar unir nodos huffman");
     }
 
     public
     String codificarCaracter(final char caracter,
                              final String prefijo)
     {
+        //Cuando es una hoja debemos,chequeamos si el caracter es el que buscamos.
+        //Si es este retornamos el prefijo que vamos a ir construyendo recursivamente. Por ejemplo 000101
+        //Si no es ese, debemos retornar null que seria lo equivalente a decir que ese caracter no fue encontrado en
+        //en el camino que estuvimos recorriendo.
         if (this.esHoja())
         {
             if (caracterConFrecuencia.getCaracter() == caracter)
@@ -86,18 +86,14 @@ class NodoHuffman
             }
             else
             {
-                return null;
+                return null; // Si no se encontro el caracter es null
             }
         }
         else
         {
-            String caracterPorIzq = this.izq != null ? this.izq.codificarCaracter(caracter, prefijo + "0") : null;
-            String caracterPorDer = this.der != null ? this.der.codificarCaracter(caracter, prefijo + "1") : null;
-            if (caracterPorDer != null)
-            {
-                return caracterPorDer;
-            }
-            return caracterPorIzq;
+            //Tenemos que buscar el caracter recursivamente por la izquierda y la derecha
+            //Como convencion los caracteres a la izquierda deben tener 0 antes, mientras que lso 1 van a la derecha
+            throw new UnsupportedOperationException("Implementar el codificar caracter");
         }
     }
 }

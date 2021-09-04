@@ -4,6 +4,7 @@ import uy.edu.ort.ae2.huffman.ArbolHuffman;
 import uy.edu.ort.ae2.huffman.IteradorHuffman;
 import uy.edu.ort.ae2.io.EscritorComprimido;
 import uy.edu.ort.ae2.io.LectorArchivo;
+import uy.edu.ort.ae2.util.AGraphViz;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -16,6 +17,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public
 class Main
@@ -43,6 +46,19 @@ class Main
         //Construimos el arbol de huffman desde abajo a partir de las frecuencias
         ArbolHuffman arbolHuffman = construccionDelArbol.construirArbolDesdeAbajo(contarFrecuencias.getFrecuenciasDeCaracter());
 
+        //Imprimimos algunas metricas
+        System.out.println("El codigo del caracter mas largo es la altura (A implementar):" + arbolHuffman.altura());
+        System.out.println("La cantidad de caracteres del arbol es la cantidad de hojas:" + arbolHuffman.cantidadDeHojas());
+       /* Si queres imprimir el arbol descomentar el siguiente codigo
+
+        AGraphViz.imprimirArbol(arbolHuffman.getRaiz(),
+                                v->v.esHoja()?
+                                    v.getCaracterConFrecuencia().getCaracter()+"-"+v.getCaracterConFrecuencia().getFrecuencia():
+                                    v.getFrecuencia()+"",
+                                v-> Stream.of(v.getIzq(),v.getDer()).collect(Collectors.toList()),
+                                20);
+
+        */
         // Hacemos una pequeña prueba chequeando que el inicio se descomprime bien.
         String original = "This is the 100th Etext file presented by Project Gutenberg";
         String comprimido = codificarElTexto.textoCodificado(arbolHuffman, original);

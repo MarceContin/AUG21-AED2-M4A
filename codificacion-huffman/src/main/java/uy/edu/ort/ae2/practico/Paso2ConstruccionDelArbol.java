@@ -22,10 +22,11 @@ class Paso2ConstruccionDelArbol
         }
         while (raices.getLargo() > 1)
         {
-            //TODO: Hay que implementar
+
 
             NodoHuffman raiz1 = popMinimo(raices);
             NodoHuffman raiz2 = popMinimo(raices);
+            //Una vez tenemos las dos raices de menor de frecuencia los unimos bajo una misma raiz.
             NodoHuffman nuevaRaiz = NodoHuffman.unirNodos(raiz1, raiz2);
             raices.agregarComienzo(nuevaRaiz);
         }
@@ -42,13 +43,9 @@ class Paso2ConstruccionDelArbol
         {
             /*
              * La idea de esto es que pongan en el mínimo el arbol que tiene la menor frecuencia.
+             * Tipico código de P1/P2
              */
-            //throw new UnsupportedOperationException("Implemenar popMinimo Paso2");
-
-            if (minimo == null || r.getFrecuencia() < minimo.getFrecuencia())
-            {
-                minimo = r;
-            }
+            throw new UnsupportedOperationException("Implemenar popMinimo Paso2");
         }
 
         raices.eliminar(minimo);
