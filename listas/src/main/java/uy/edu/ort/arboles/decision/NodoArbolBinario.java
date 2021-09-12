@@ -1,6 +1,7 @@
 package uy.edu.ort.arboles.decision;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import uy.edu.ort.util.AGraphViz;
@@ -26,7 +27,7 @@ public abstract class NodoArbolBinario<T,U extends NodoArbolBinario<T, U>> {
 	public void imprimirGraphViz(int nivelMaximo) {
 		AGraphViz.imprimirArbol(this, 
 				v->v.dato.toString(), 
-				v->(List<NodoArbolBinario<T,U>>)Stream.of(izq,der).toList(), 
+				v-> Stream.of(izq, der).collect(Collectors.toList()),
 				nivelMaximo);
 	}
 	public int alturaNodo() {
