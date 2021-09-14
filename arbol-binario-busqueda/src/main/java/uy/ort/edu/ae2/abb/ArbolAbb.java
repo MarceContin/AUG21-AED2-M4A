@@ -9,7 +9,17 @@ public class ArbolAbb{
 	private NodoAbb raiz;
 	
 	void insertar(Animal animal) {
+		if(esVacio()) {
+			raiz=new NodoAbb(animal);
+		}else {
+			NodoAbb.insertar(raiz,animal);
+		}
+		
 
+	}
+
+	private boolean esVacio() {
+		return raiz==null;
 	}
 	
 	void buscar(long codigo) {

@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Animal {
 
 	
-	private long codigo;//ejemplo 202109130 ->>->>> 2021-09-13-0
+	private long codigo;//ejemplo 202109140 ->>->>> 2021-09-13-0
 	private String nombre;
 	
 	
@@ -13,6 +13,7 @@ public class Animal {
 		super();
 		this.codigo = Long.parseLong(String.format("%s%3s", codigoFecha,codigoGenerico).replace(" ", "0"));
 		this.nombre = nombre;
+		
 	}
 	
 	public String toString() {
@@ -51,6 +52,10 @@ public class Animal {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public boolean esMayor(Animal animal) {
+		return this.codigo>animal.codigo;
 	}
 	
 	

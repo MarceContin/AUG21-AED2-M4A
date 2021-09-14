@@ -42,7 +42,40 @@ public class NodoAbb {
 		return 0;
 	}
 	
-	
+	static void insertar(NodoAbb nodo,Animal a) {
+		if(nodo.animal.equals(a)) {
+			throw new IllegalArgumentException("Repetido :(");
+		}else if(a.esMayor(nodo.animal)) {
+			if(nodo.der==null) {
+				nodo.der=new NodoAbb(a);
+			}else {
+				insertar(nodo.der,a);	
+			}
+			
+		}else {
+			if(nodo.izq==null) {
+				nodo.izq=new NodoAbb(a);
+			}else {
+				insertar(nodo.izq,a);	
+			}
+		}
+		
+	}
+	static NodoAbb insertarCheto(NodoAbb nodo,Animal a) {
+		if(nodo==null){
+			//El arbol esvacio
+			return new NodoAbb(a);
+		}else if(nodo.animal.equals(a)) {
+			throw new IllegalArgumentException("Repetido :(");
+		}else if(a.esMayor(nodo.animal)) {
+			nodo.der=insertarCheto(nodo.der,a);	
+			return nodo;			
+		}else {
+			nodo.izq=insertarCheto(nodo.izq,a);
+			return nodo;
+		}
+		
+	}
 
 	
 }
