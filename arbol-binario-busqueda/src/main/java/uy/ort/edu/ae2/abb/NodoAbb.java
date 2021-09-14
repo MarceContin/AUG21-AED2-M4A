@@ -34,20 +34,7 @@ public class NodoAbb {
 		return animal.toString();
 	}
 	
-	
-	public static NodoAbb insertar(NodoAbb nodo,Animal dato ) {
-		if(nodo==null)return new NodoAbb(dato);
-		if(dato.getCodigo()<nodo.animal.getCodigo()) {
-			nodo.izq=insertar(nodo.izq,dato);
-			
-		}else {
-			
-			nodo.der=insertar(nodo.der,dato);
-			
-			
-		}
-		return nodo;
-	}
+
 	public static int cantidad(NodoAbb raiz) {
 		if(raiz!=null) {
 			return 1+cantidad(raiz.izq)+cantidad(raiz.der);

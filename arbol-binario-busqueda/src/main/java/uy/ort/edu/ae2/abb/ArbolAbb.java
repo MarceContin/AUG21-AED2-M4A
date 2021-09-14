@@ -9,7 +9,7 @@ public class ArbolAbb{
 	private NodoAbb raiz;
 	
 	void insertar(Animal animal) {
-		raiz=NodoAbb.insertar(raiz,animal);
+
 	}
 	
 	void buscar(long codigo) {
