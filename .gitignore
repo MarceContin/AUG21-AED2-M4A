@@ -28,3 +28,4 @@ hs_err_pid*
 build/
 .settings/
 bin/
+!gradle-wrapper.jar
