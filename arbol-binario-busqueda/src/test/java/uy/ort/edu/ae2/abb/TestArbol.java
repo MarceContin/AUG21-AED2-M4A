@@ -1,6 +1,7 @@
 package uy.ort.edu.ae2.abb;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestArbol {
@@ -28,6 +29,8 @@ public class TestArbol {
 		
 		abb.imprimirGraphViz();
 		
+		Assertions.assertEquals(nilo,abb.buscar(nilo.getCodigo()));
+		Assertions.assertEquals(sasha,abb.animalMasAntiguo());
 	
 	}
 }

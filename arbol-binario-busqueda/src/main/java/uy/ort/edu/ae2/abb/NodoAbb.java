@@ -76,6 +76,16 @@ public class NodoAbb {
 		}
 		
 	}
+	
+	public NodoAbb clon() {
+		NodoAbb nuevoClon=new NodoAbb(this.animal);
+		nuevoClon.animal=this.animal;
+		if(this.der!=null)
+			nuevoClon.der=this.der.clon();//me clono el subarbol derecho;
+		if(this.izq!=null)
+			nuevoClon.izq=this.izq.clon();//me clono el subarbol izq;
+		return nuevoClon;
+	}
 
 	
 }

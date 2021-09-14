@@ -22,17 +22,35 @@ public class ArbolAbb{
 		return raiz==null;
 	}
 	
-	void buscar(long codigo) {
+	Animal buscar(long codigo) {
+		return buscar(codigo,raiz);
 		
 	}
+	private Animal buscar(long codigo, NodoAbb nodo) {
+		if(nodo==null)return null;
+		else if(codigo==nodo.getAnimal().getCodigo())
+			return nodo.getAnimal();
+		else if(codigo>nodo.getAnimal().getCodigo())
+			return buscar(codigo, nodo.getDer());
+		else //es menor el codigo
+		return buscar(codigo,nodo.getIzq());
+	}
+
 	void borrar(long codigo) {
 		
 	}
 	
 	Animal animalMasAntiguo() {//Obttener minimo
-		return null;
+		return masAntiguo(raiz);
 	}
 	
+	private Animal masAntiguo(NodoAbb nodo) {
+		if(nodo==null) return null;
+		else if(nodo.getIzq()==null)
+			return nodo.getAnimal();
+		return masAntiguo(nodo.getIzq());
+	}
+
 	Animal animalMasReciente() {//Obttener maximo
 		return null;
 	}
@@ -54,4 +72,5 @@ public class ArbolAbb{
 				n->Stream.of(n.getIzq(),n.getDer()).collect(Collectors.toList()), 2220);
 	}
 
+	
 }
